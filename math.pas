@@ -3,6 +3,7 @@ uses Crt;
 var
 Opcao: string;
 
+/////Inicio dos procedimentos
 procedure Titulo();
 begin
    ClrScr;
@@ -91,6 +92,7 @@ begin
    write ('O número ', N, ' é ', S);
 end;
 
+/////Inicio das Funções
 function FuncParOuImpar(V: integer): string;
 begin
    if (Vmod2 = 0) then begin
@@ -111,6 +113,7 @@ begin
    Result :=  R;
 end;
 
+/////Programa principal
 begin
    Titulo();
    writeln ('Para realizar calculos básicos de matemática, digite 1: ');
