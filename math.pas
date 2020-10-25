@@ -16,7 +16,20 @@ procedure PrimeiroMenu();
 begin
    writeln ('Para realizar calculos básicos de matemática, digite 1: ');
    writeln ('Para verificar se um número é par ou impar, digite 2: ');
+   writeln ('Para verificar o fatorial de um número, digite 3: ');
    writeln ('');
+end;
+
+procedure Fatorial();
+var
+N, F: integer;
+begin
+   ClrScr;
+   Titulo();
+   write('Digite um número: ');
+   readln (N);
+   F := FuncFatorial(N);
+   writeln ('O valor de ', N,'! é igual a ', F);
 end;
 
 procedure Matematica();
@@ -78,6 +91,17 @@ begin
    end;
 end;
 
+function FuncFatorial(V: integer):integer;
+Var
+C, R: integer;
+begin
+   R := 1;
+   for C := 1 to V do begin
+   R := R * C;
+   end;
+   Result :=  R;
+end;
+
 begin
    Titulo();
    PrimeiroMenu();
@@ -88,5 +112,7 @@ begin
    Matematica();
    : '2';
    ImparOuPar();
+   : '3';
+   Fatorial();
    end;
 end.
