@@ -1,4 +1,4 @@
-program Matematica;
+program mathdemo;
 uses Crt;
 var
 Opcao: string;
@@ -10,14 +10,6 @@ begin
    writeln('       Sistema automático de matematica');
    writeln('------------------------------------------------');
    writeln('');
-end;
-
-procedure PrimeiroMenu();
-begin
-   writeln ('Para realizar calculos básicos de matemática, digite 1: ');
-   writeln ('Para verificar se um número é par ou impar, digite 2: ');
-   writeln ('Para verificar o fatorial de um número, digite 3: ');
-   writeln ('');
 end;
 
 procedure Fatorial();
@@ -34,38 +26,55 @@ end;
 
 procedure Matematica();
 var
-V1, V2: integer;
+V: array[1..2] de integer;
 Res: real;
 Opcao: string;
 begin
    Titulo();
    write('Digite o primeiro valor: ');
-   readln (V1);
+   readln (V[1]);
    write('Digite o segundo valor: ');
-   readln (V2);
-   writeln('');
+   readln (V[2]);
+   ClrScr;
+   Titulo();
    writeln('Para somar, digite 1');
    writeln('Para subtrair, digite 2');
    writeln('Para multiplicar, digite 3');
    writeln('Para dividir, digite 4');
-   writeln('Para encerrar o programa, digite 5');
+   writeln('Para verificar a média, digite 5');
+   writeln('Para encerrar o programa, digite 6');
    writeln('');
    write('Digite a opção desejada: ');
    readln(Opcao);
    case(Opcao);
    : '1';
-   Res := V1+V2;
+   Res := V[1]+V[2];
+   ClrScr;
+   Titulo();
    writeln('A soma entre os valores é igual à ', Res);
    : '2';
-   Res := V1-V2;
+   Res := V[1]-V[2];
+   ClrScr;
+   Titulo();
    writeln('A subtração entre os valores é igual à ', Res);
    : '3';
-   Res := V1*V2;
+   Res := V[1]*V[2];
+   ClrScr;
+   Titulo();
    writeln('A multiplicação entre os valores é igual à ', Res);
    : '4';
-   Res := V1/V2;
+   Res := V[1]/V[2];
+   ClrScr;
+   Titulo();
    writeln('A divisão entre os valores é igual à ', Res);
    : '5';
+   Res := (V[1]+V[2])/2;
+   ClrScr;
+   Titulo();
+   writeln('A média entre os valores é igual à ', Res);
+   : '6';
+   ClrScr;
+   Titulo();
    writeln('Encerrando...');
    end;
 end;
@@ -104,7 +113,10 @@ end;
 
 begin
    Titulo();
-   PrimeiroMenu();
+   writeln ('Para realizar calculos básicos de matemática, digite 1: ');
+   writeln ('Para verificar se um número é par ou impar, digite 2: ');
+   writeln ('Para verificar o fatorial de um número, digite 3: ');
+   writeln ('');
    write ('Digite a opção desejada: ');
    readln(Opcao);
    case (Opcao);
